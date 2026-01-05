@@ -3,65 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nisargam | Premium Handmade Soaps</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <title>NISARGAM | The Essence of Purity</title>
+    
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="main-container">
+    <div class="cursor"></div>
+
+    <div class="main-wrapper">
         
         <nav>
-            <div class="logo">NISARGAM</div>
-            <div class="menu">
-                <a href="#home">Home</a>
-                <a href="#collection">Collection</a>
-                <a href="#about">About</a>
-                <a href="#" class="cart-icon"><i class="ri-shopping-bag-line"></i></a>
+            <div class="nav-left">
+                <a href="#">Shop</a>
+                <a href="#">About</a>
+            </div>
+            <div class="brand-name">NISARGAM</div>
+            <div class="nav-right">
+                <a href="#">Cart (0)</a>
             </div>
         </nav>
 
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1>Nature's Touch <br> for Your Skin</h1>
-                <p>Experience the purity of 100% handmade organic soaps.</p>
-                <a href="#collection" class="btn-primary">Shop Collection</a>
+        <section class="hero">
+            <div class="hero-text">
+                <h1 class="reveal-text">Raw. Earthy.</h1>
+                <h1 class="reveal-text">Authentic.</h1>
             </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1600857062241-98e5dba7f214?q=80&w=1998&auto=format&fit=crop" alt="Premium Soap">
+            <div class="sub-hero">
+                <p>Handcrafted soaps curated from the <br> heart of nature.</p>
+                <div class="scroll-down">
+                    <i class="ri-arrow-down-line"></i>
+                </div>
+            </div>
+            <div class="hero-img-container">
+                <img src="https://images.unsplash.com/photo-1616200297034-75463f0d238b?q=80&w=2070&auto=format&fit=crop" alt="Luxury Soap Texture">
             </div>
         </section>
 
-        <section id="collection" class="products">
-            <h2>Our Signature Blends</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="p-img">
-                        <img src="https://images.unsplash.com/photo-1607006344380-b6775a0824a7?q=80&w=2070&auto=format&fit=crop" alt="Lavender Soap">
+        <div class="marquee">
+            <div class="track">
+                <h2>ORGANIC &nbsp; • &nbsp; HANDMADE &nbsp; • &nbsp; CHEMICAL FREE &nbsp; • &nbsp; LUXURY &nbsp; • &nbsp; </h2>
+                <h2>ORGANIC &nbsp; • &nbsp; HANDMADE &nbsp; • &nbsp; CHEMICAL FREE &nbsp; • &nbsp; LUXURY &nbsp; • &nbsp; </h2>
+            </div>
+        </div>
+
+        <section class="products" id="shop">
+            <div class="section-header">
+                <h3>Selected Works</h3>
+                <p>Limited Edition 2026</p>
+            </div>
+
+            <div class="product-list">
+                
+                <div class="product-item">
+                    <div class="p-img-box">
+                        <img src="https://images.unsplash.com/photo-1607006344380-b6775a0824a7?q=80&w=2070&auto=format&fit=crop" alt="Lavender">
+                        <div class="overlay">
+                            <button onclick="whatsappOrder('Lavender Royale', 299)">Add to Cart — ₹299</button>
+                        </div>
                     </div>
-                    <h3>Lavender Bliss</h3>
-                    <p>₹ 199.00</p>
-                    <button class="btn-buy" onclick="buyNow('Lavender Bliss')">Buy Now</button>
+                    <div class="p-info">
+                        <h4>Lavender Royale</h4>
+                        <span>Relaxation</span>
+                    </div>
                 </div>
 
-                <div class="product-card">
-                    <div class="p-img">
-                        <img src="https://plus.unsplash.com/premium_photo-1675844898242-491c6e6144e3?q=80&w=1887&auto=format&fit=crop" alt="Charcoal Soap">
+                <div class="product-item">
+                    <div class="p-img-box">
+                        <img src="https://images.unsplash.com/photo-1547793549-127be1bed1e9?q=80&w=2070&auto=format&fit=crop" alt="Coffee Scrub">
+                        <div class="overlay">
+                            <button onclick="whatsappOrder('Espresso Scrub', 349)">Add to Cart — ₹349</button>
+                        </div>
                     </div>
-                    <h3>Activated Charcoal</h3>
-                    <p>₹ 249.00</p>
-                    <button class="btn-buy" onclick="buyNow('Activated Charcoal')">Buy Now</button>
+                    <div class="p-info">
+                        <h4>Espresso Scrub</h4>
+                        <span>Exfoliation</span>
+                    </div>
                 </div>
+
+                 <div class="product-item">
+                    <div class="p-img-box">
+                        <img src="https://images.unsplash.com/photo-1629198728958-3642c6762391?q=80&w=1943&auto=format&fit=crop" alt="Charcoal">
+                        <div class="overlay">
+                            <button onclick="whatsappOrder('Midnight Charcoal', 249)">Add to Cart — ₹249</button>
+                        </div>
+                    </div>
+                    <div class="p-info">
+                        <h4>Midnight Charcoal</h4>
+                        <span>Deep Cleanse</span>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <footer>
-            <p>&copy; 2026 Nisargam. Crafted with Nature.</p>
+            <div class="footer-content">
+                <h2>NISARGAM</h2>
+                <p>Rashin, Maharashtra - 414403</p>
+                <div class="socials">
+                    <a href="#">Instagram</a>
+                    <a href="#">WhatsApp</a>
+                </div>
+            </div>
         </footer>
 
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
