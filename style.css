@@ -1,12 +1,15 @@
+/* --- COLORS & FONTS VARIABLES --- */
 :root {
-    --bg-color: #F3F0EB; /* एकदम सॉफ्ट क्रीम/बेज कलर */
-    --text-color: #2C362B; /* डार्क फॉरेस्ट ग्रीन (काळा नाही) */
-    --accent: #8F7258; /* मातीचा/लाकडाचा ब्राऊन रंग */
+    --bg-color: #F3F0EB;       /* क्रीम/बेज (Background) */
+    --text-color: #2C362B;     /* डार्क फॉरेस्ट ग्रीन (Text) */
+    --accent: #8F7258;         /* मातीचा/लाकडाचा ब्राऊन (Accent) */
     --white: #FFFFFF;
+    --cart-bg: #FFFFFF;
     --font-heading: 'Clash Display', sans-serif;
     --font-body: 'Satoshi', sans-serif;
 }
 
+/* --- GLOBAL RESET --- */
 * {
     margin: 0;
     padding: 0;
@@ -17,11 +20,11 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-body);
-    overflow-x: hidden;
-    cursor: none;
+    overflow-x: hidden; /* Horizontal Scroll बंद */
+    cursor: none; /* डीफॉल्ट कर्सर लपवला आहे */
 }
 
-/* Custom Cursor (Darker for visibility) */
+/* --- CUSTOM CURSOR --- */
 .cursor {
     width: 20px;
     height: 20px;
@@ -32,25 +35,32 @@ body {
     pointer-events: none;
     z-index: 9999;
     transition: transform 0.1s;
+    mix-blend-mode: multiply;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+    cursor: none; /* लिंकवर पण कर्सर लपवा */
 }
 
-/* Navbar */
+button {
+    cursor: none;
+}
+
+/* --- NAVBAR --- */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 4rem;
+    padding: 1.5rem 4rem;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 100;
-    background: rgba(243, 240, 235, 0.8); /* Glassmorphism effect */
-    backdrop-filter: blur(10px);
+    background: rgba(243, 240, 235, 0.85); /* Glass Effect */
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .brand-name {
@@ -74,7 +84,7 @@ nav {
     color: var(--accent);
 }
 
-/* Hero Section */
+/* --- HERO SECTION --- */
 .hero {
     height: 100vh;
     display: flex;
@@ -82,6 +92,7 @@ nav {
     justify-content: center;
     padding: 0 4rem;
     position: relative;
+    padding-top: 80px;
 }
 
 .hero-text h1 {
@@ -90,7 +101,6 @@ nav {
     line-height: 0.9;
     text-transform: uppercase;
     color: var(--text-color);
-    mix-blend-mode: multiply; /* Text फोटोमध्ये ब्लेंड होईल */
 }
 
 .sub-hero {
@@ -108,15 +118,16 @@ nav {
     font-weight: 500;
 }
 
+/* Premium Arch Image Shape */
 .hero-img-container {
     position: absolute;
-    top: 15%;
-    right: 10%;
-    width: 30vw;
-    height: 40vw;
+    top: 18%;
+    right: 8%;
+    width: 32vw;
+    height: 42vw;
     z-index: -1;
-    opacity: 0.9;
-    border-radius: 200px 200px 0 0; /* Arch Shape (Modern Look) */
+    opacity: 1;
+    border-radius: 200px 200px 0 0; /* Arch Shape */
     overflow: hidden;
 }
 
@@ -126,20 +137,19 @@ nav {
     object-fit: cover;
 }
 
-/* Marquee (Light Mode Style) */
+/* --- MARQUEE (SCROLLING TEXT) --- */
 .marquee {
     width: 100%;
     padding: 3rem 0;
     overflow: hidden;
-    background: var(--text-color); /* Dark Background strip */
-    color: var(--bg-color); /* Light Text */
+    background: var(--text-color);
+    color: var(--bg-color);
     white-space: nowrap;
-    margin-top: -2px;
 }
 
 .track {
     display: inline-flex;
-    animation: marquee 15s linear infinite;
+    animation: marquee 20s linear infinite;
 }
 
 .marquee h2 {
@@ -155,10 +165,49 @@ nav {
     to { transform: translateX(-50%); }
 }
 
-/* Products Section */
+/* --- ABOUT SECTION --- */
+.about-section {
+    padding: 8rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E8E4DC; /* थोडा डार्क टोन */
+}
+
+.about-content {
+    width: 45%;
+}
+
+.about-content h3 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #4a4a4a;
+}
+
+.about-img {
+    width: 45%;
+    height: 450px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.about-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- PRODUCTS SECTION --- */
 .products {
     padding: 8rem 4rem;
-    background-color: var(--white); /* White section for products to pop */
+    background-color: var(--white);
 }
 
 .section-header {
@@ -183,6 +232,7 @@ nav {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .product-item {
@@ -200,7 +250,8 @@ nav {
     overflow: hidden;
     position: relative;
     margin-bottom: 1.5rem;
-    border-radius: 10px; /* Soft edges */
+    border-radius: 8px;
+    background: #f0f0f0;
 }
 
 .p-img-box img {
@@ -214,13 +265,13 @@ nav {
     transform: scale(1.1);
 }
 
-/* Light Mode Overlay */
+/* Product Overlay Button */
 .overlay {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -240,9 +291,14 @@ nav {
     font-family: var(--font-body);
     font-weight: 500;
     text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 50px; /* Pill shape button */
+    cursor: none; /* Using custom cursor */
+    border-radius: 50px;
     letter-spacing: 1px;
+    transition: 0.2s;
+}
+
+.overlay button:hover {
+    background: var(--accent);
 }
 
 .p-info {
@@ -258,12 +314,107 @@ nav {
 
 .p-info span {
     color: var(--accent);
-    font-size: 0.9rem;
-    text-transform: uppercase;
+    font-size: 1rem;
     font-weight: 600;
 }
 
-/* Footer */
+/* --- CART SIDEBAR --- */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -450px; /* लपलेले */
+    width: 400px;
+    height: 100vh;
+    background: var(--cart-bg);
+    box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1); /* Smooth Slide */
+}
+
+.cart-sidebar.open {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cart-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+}
+
+.close-cart {
+    font-size: 1.5rem;
+    cursor: none;
+    transition: 0.3s;
+}
+
+.close-cart:hover {
+    transform: rotate(90deg);
+}
+
+.cart-items {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border-bottom: 1px solid #f5f5f5;
+    padding-bottom: 0.8rem;
+}
+
+.empty-msg {
+    text-align: center;
+    margin-top: 2rem;
+    color: #888;
+}
+
+.cart-footer {
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+}
+
+.cart-footer button {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--text-color);
+    color: var(--white);
+    border: none;
+    font-size: 1rem;
+    cursor: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.cart-footer button:hover {
+    background: #1a2219;
+}
+
+/* --- FOOTER --- */
 footer {
     padding: 6rem 4rem;
     background: var(--text-color);
@@ -275,6 +426,7 @@ footer h2 {
     font-family: var(--font-heading);
     font-size: 6vw;
     margin-bottom: 1rem;
+    opacity: 0.9;
 }
 
 .socials {
@@ -294,21 +446,34 @@ footer h2 {
     border-bottom: 1px solid var(--white);
 }
 
-/* Mobile Responsive */
+/* --- MOBILE RESPONSIVE --- */
 @media (max-width: 768px) {
+    nav { padding: 1.5rem 2rem; }
+    
     .hero-text h1 { font-size: 16vw; }
+    
     .hero-img-container { 
         position: relative; 
         width: 100%; 
-        height: 300px; 
-        top: 0; 
-        right: 0; 
+        height: 350px; 
+        top: 0; right: 0; 
         margin-top: 2rem;
         border-radius: 10px;
     }
+    
+    .about-section { 
+        flex-direction: column; 
+        padding: 4rem 2rem;
+    }
+    
+    .about-content, .about-img { width: 100%; }
+    .about-content { margin-bottom: 3rem; }
+    .about-content h3 { font-size: 2.5rem; }
+    
     .product-list { flex-direction: column; }
     .product-item { width: 100%; margin-bottom: 4rem; }
-    nav { padding: 1.5rem 2rem; }
+    
+    .section-header h3 { font-size: 3rem; }
+    .cart-sidebar { width: 100%; right: -100%; }
     .hero, .products { padding: 0 2rem; }
-    .section-header h3 { font-size: 2.5rem; }
 }
