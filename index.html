@@ -13,16 +13,31 @@
 
     <div class="cursor"></div>
 
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Bag</h3>
+            <span class="close-cart" onclick="toggleCart()"><i class="ri-close-line"></i></span>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-msg">Your bag is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="total">
+                <span>Total:</span>
+                <span id="cartTotal">₹0</span>
+            </div>
+            <button onclick="checkout()">Checkout on WhatsApp</button>
+        </div>
+    </div>
+
     <div class="main-wrapper">
         
         <nav>
             <div class="nav-left">
-                <a href="#">Shop</a>
-                <a href="#">About</a>
-            </div>
+                <a href="#shop">Shop</a> <a href="#about">About</a> </div>
             <div class="brand-name">NISARGAM</div>
             <div class="nav-right">
-                <a href="#">Cart (0)</a>
+                <a href="#" onclick="toggleCart()">Cart (<span id="cartCount">0</span>)</a>
             </div>
         </nav>
 
@@ -33,9 +48,6 @@
             </div>
             <div class="sub-hero">
                 <p>Handcrafted soaps curated from the <br> heart of nature.</p>
-                <div class="scroll-down">
-                    <i class="ri-arrow-down-line"></i>
-                </div>
             </div>
             <div class="hero-img-container">
                 <img src="https://images.unsplash.com/photo-1616200297034-75463f0d238b?q=80&w=2070&auto=format&fit=crop" alt="Luxury Soap Texture">
@@ -49,6 +61,18 @@
             </div>
         </div>
 
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <h3>Our Story</h3>
+                <p>Nisargam is born from the soil of Rashin. We believe in the healing power of nature. Every bar of soap is hand-poured, cured for weeks, and infused with natural essential oils to give your skin the luxury it deserves.</p>
+                <br>
+                <p>No Chemicals. No Preservatives. Just Pure Nature.</p>
+            </div>
+            <div class="about-img">
+                 <img src="https://images.unsplash.com/photo-1600857062241-98e5dba7f214?q=80&w=1998&auto=format&fit=crop" alt="Making Soap">
+            </div>
+        </section>
+
         <section class="products" id="shop">
             <div class="section-header">
                 <h3>Selected Works</h3>
@@ -61,12 +85,12 @@
                     <div class="p-img-box">
                         <img src="https://images.unsplash.com/photo-1607006344380-b6775a0824a7?q=80&w=2070&auto=format&fit=crop" alt="Lavender">
                         <div class="overlay">
-                            <button onclick="whatsappOrder('Lavender Royale', 299)">Add to Cart — ₹299</button>
+                            <button onclick="addToCart('Lavender Royale', 299)">Add +</button>
                         </div>
                     </div>
                     <div class="p-info">
                         <h4>Lavender Royale</h4>
-                        <span>Relaxation</span>
+                        <span>₹299</span>
                     </div>
                 </div>
 
@@ -74,12 +98,12 @@
                     <div class="p-img-box">
                         <img src="https://images.unsplash.com/photo-1547793549-127be1bed1e9?q=80&w=2070&auto=format&fit=crop" alt="Coffee Scrub">
                         <div class="overlay">
-                            <button onclick="whatsappOrder('Espresso Scrub', 349)">Add to Cart — ₹349</button>
+                            <button onclick="addToCart('Espresso Scrub', 349)">Add +</button>
                         </div>
                     </div>
                     <div class="p-info">
                         <h4>Espresso Scrub</h4>
-                        <span>Exfoliation</span>
+                        <span>₹349</span>
                     </div>
                 </div>
 
@@ -87,12 +111,12 @@
                     <div class="p-img-box">
                         <img src="https://images.unsplash.com/photo-1629198728958-3642c6762391?q=80&w=1943&auto=format&fit=crop" alt="Charcoal">
                         <div class="overlay">
-                            <button onclick="whatsappOrder('Midnight Charcoal', 249)">Add to Cart — ₹249</button>
+                            <button onclick="addToCart('Midnight Charcoal', 249)">Add +</button>
                         </div>
                     </div>
                     <div class="p-info">
                         <h4>Midnight Charcoal</h4>
-                        <span>Deep Cleanse</span>
+                        <span>₹249</span>
                     </div>
                 </div>
 
